@@ -1,4 +1,4 @@
-const text = 'is an Islamic ivory-white marble mausoleum on the right bank of the river Yamuna  in the Indian city of Agra. It was commissioned in 1632 by the Mughal emperor Shah Jahan (r. 1628\u20131658) to house the tomb of his favourite wife, Mumtaz Mahal; it also houses the tomb of Shah Jahan himself. The tomb is the centrepiece of a 17-hectare (42-acre) complex, which includes a mosque and a guest house, and is set in formal gardens bounded on three sides by a crenellated wall.\nConstruction of the mausoleum was essentially completed in 1643, but work continued on other phases of the project for another 10 years. The Taj Mahal complex is believed to have been completed in its entirety in 1653 at a cost estimated at the time to be around 32 million, which in 2020 would be approximately 70 billion (about US $1 billion). The construction project employed some 20,000 artisans under the guidance of a board of architects led by the court architect to the emperor, Ustad Ahmad Lahauri. Various types of symbolism have been employed in the Taj to reflect natural beauty and divinity.\nThe Taj Mahal was designated as a UNESCO World Heritage Site in 1983 for being \"the jewel of Muslim art in India and one of the universally admired masterpieces of the world s heritage. It is regarded by many as the best example of Mughal architecture and a symbol of India s rich history.';
+let text = '';
 
 let isHiddenTextShown = false;
 let isVideoOn = false;
@@ -8,6 +8,7 @@ let isFullScreen = false;
 
 function createReadMore(){
     const textShown = text.substring(0,500);
+    document.getElementById('read-more-btn').style.display = 'block';
     document.getElementById('introduction').innerText = textShown;
 }
 function initDectectionModel(){
@@ -23,6 +24,16 @@ function requestModel(label){
     frame.src = `http://localhost:3000/test?name=${label}`;
     
 }
+function getInfo(query){
+    fetch("https://en.wikipedia.org/w/api.php?format=json&action=query&origin=*&prop=extracts&exintro&explaintext&redirects=1&titles="+query).then(function(resp) {
+    return resp.json()
+    }).then(function(data) {
+        const {title,extract} = data.query.pages[Object.keys(data.query.pages)[0]]
+        document.getElementById('content-heading').innerText = title;
+        text = extract;
+        createReadMore();
+    })
+}
 function maxResult(err,results){
     // finding the best classification confidence along with its label
     let max = {label:results[0].label,confidence:results[0].confidence}
@@ -36,6 +47,7 @@ function maxResult(err,results){
     }
     document.getElementById('loader').style.display = "none";
     requestModel(max.label);
+    getInfo(max.label);
     
 }
 function detectAndShow(image){
@@ -148,7 +160,5 @@ function getSearchResult(){
 }
 function init(){
     initDectectionModel();
-    createReadMore();
-    
 }
 init()
