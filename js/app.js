@@ -1,11 +1,10 @@
 let text = '';
-
 let isHiddenTextShown = false;
 let isVideoOn = false;
 let webcam = null;
 let classifier = null;
 let isFullScreen = false;
-
+let adata = null;
 function createReadMore(){
     const textShown = text.substring(0,500);
     document.getElementById('read-more-btn').style.display = 'block';
@@ -19,10 +18,13 @@ function initDectectionModel(){
 }
 function requestModel(label){
     document.getElementById('model-name').innerText = label;
-    const frame = document.getElementById('model-frame')
-    frame.style.display='block';
-    frame.src = `http://localhost:3000/test?name=${label}`;
-    
+    fetchModelData(label).then(res=>{
+        data = res.docs[0].data()
+        const viewer  = document.getElementById('hotspot-camera-view-demo')
+        viewer.style.display='block';
+        viewer.src = 'https://cors-anywhere.herokuapp.com/'+data.url;
+        
+});
 }
 function getInfo(query){
     fetch("https://en.wikipedia.org/w/api.php?format=json&action=query&origin=*&prop=extracts&exintro&explaintext&redirects=1&titles="+query).then(function(resp) {
@@ -35,6 +37,10 @@ function getInfo(query){
     })
 }
 function maxResult(err,results){
+    if(err){
+        console.log(err)
+        return;
+    }
     // finding the best classification confidence along with its label
     let max = {label:results[0].label,confidence:results[0].confidence}
     for(let i in results){
@@ -94,14 +100,15 @@ document.querySelector('.photo-btn').addEventListener('click',()=>{
     removeModel();
     document.getElementById('loader').style.display = "block";
     let picture  = webcam.snap();
-    const image = document.createElement('img')
+    const image = document.getElementById('prediction-image')
     image.src = picture;
     detectAndShow(image)
 })
 function removeModel(){
-    const frame = document.getElementById('model-frame')
-    frame.style.display = "none";
-    frame.src = "";
+    const viewer = document.getElementById('hotspot-camera-view-demo')
+    document.getElementById('model-name').innerText = 'Model Name';
+    viewer.src = "";
+    viewer.style.display = 'none';
 }
 function updateElementsForFullScreen(){
     const webcam = document.getElementById('webcam')
