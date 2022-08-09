@@ -4,6 +4,7 @@ let isHiddenTextShown = false;
 let isVideoOn = false;
 let webcam = null;
 let classifier = null;
+let isStreetView=false;
 let isFullScreen = false;
 
 function createReadMore(){
@@ -53,6 +54,23 @@ function showHiddenText(){
         createReadMore();
         readMore.innerText = 'Read More';
         isHiddenTextShown = false;
+    }
+}
+function showStreetView(){
+    const streetView=document.getElementById("street-view");
+    const readMore = document.getElementById('read-more-btn');
+    const modelText=document.getElementById('introduction');
+    if(!isStreetView){
+        streetView.style.display="inline";
+        readMore.style.display="none";
+        modelText.style.display="none";
+        isStreetView=true;
+    }
+    else{
+        streetView.style.display="none";
+        readMore.style.display="inline";
+        modelText.style.display="inline";
+        isStreetView=false;
     }
 }
 function startWebcam(){
