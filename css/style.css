@@ -216,8 +216,8 @@ button {
 /* model */
 .modal {
     /* border: 1px solid red; */
-    display: none;
-    /* position: fixed; */
+    /* display: none;
+    position: fixed; */
     z-index: 1000;
     padding-top: 100px;
     left: 0;
@@ -234,6 +234,7 @@ button {
 /* Modal Content */
 .modal-content {
     /* display: none; */
+    display: contents;
     background-color: #fefefe;
     background-color: #242326;
     margin: auto;
@@ -271,25 +272,30 @@ button {
     /* box-sizing: border-box; */
 
     background: #EEE;
-    height: 300px;
+    height: 330px;
     margin-top: 20px;
 }
 
 .carousel-cell {
     width: 80%;
-    height: 300px;
+    height: 400px;
     margin-right: 10px;
-    background: #8C8;
+    /* background: #8C8; */
     border-radius: 5px;
     counter-increment: gallery-cell;
 }
 
 /* cell number */
 .carousel-cell:before {
-    display: block;
+    /* display: block; */
     text-align: center;
     content: counter(gallery-cell);
-    line-height: 300px;
+    line-height: 400px;
     font-size: 80px;
     color: white;
+}
+
+.img1 {
+    width: 100%;
+    height: 100%;
 }
