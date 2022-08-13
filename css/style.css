@@ -71,12 +71,15 @@ button {
     display: flex;
     flex-direction: row;
     flex: 1;
+    margin-top: 3%;
+    /* border: 1px solid red; */
 
 }
 
 /* -----------------------webcam section---------------------------------------- */
 .webcam-section {
     position: relative;
+    /* border: 1px solid yellow; */
 }
 
 .webcam-btn {
@@ -96,6 +99,7 @@ button {
 .webcam-controls {
     display: flex;
     justify-content: center;
+    /* border: 1px solid navajowhite; */
 }
 
 .webcam-controls-background {
@@ -135,6 +139,7 @@ button {
     z-index: 999;
     left: 0px;
     top: 0px;
+    /* border: 1px solid green; */
 }
 
 #model-name {
@@ -174,6 +179,8 @@ button {
     border-radius: 5px;
     height: fit-content;
     padding: 30px;
+    /* border: 1px solid yellow; */
+    display: block;
 }
 
 .text-info {
@@ -234,7 +241,7 @@ button {
 /* Modal Content */
 .modal-content {
     /* display: none; */
-    display: contents;
+    /* display: none; */
     background-color: #fefefe;
     background-color: #242326;
     margin: auto;
@@ -298,4 +305,465 @@ button {
 .img1 {
     width: 100%;
     height: 100%;
+}
+
+
+
+/* media query */
+@media screen and (min-width: 300px)and (max-width:400px) {
+    .side-container {
+        /* display: flex; */
+        /* flex-direction: row; */
+        display: block;
+        flex: 1;
+        /* border: 1px solid red; */
+        width: 100%;
+
+    }
+
+    .webcam-controls {
+        display: flex;
+        justify-content: center;
+        /* border: 1px solid navajowhite; */
+        width: 100%;
+    }
+
+    .header-container {
+        display: block;
+        width: 100%;
+        /* justify-content: space-between; */
+
+    }
+
+    #search-bar {
+        width: 100%;
+    }
+
+    .dropdown {
+        width: 100%;
+
+    }
+
+    #category {
+        width: 100%;
+        height: 50px;
+
+    }
+
+    .info-section {
+        margin-left: 0px;
+    }
+
+    .text-info h1 {
+        font-family: var(--font);
+        font-size: 40px;
+    }
+
+    .text-info p {
+
+        padding-left: 5px;
+        margin-top: 20px;
+        font-weight: 400;
+        padding-right: 5px;
+    }
+
+    .text-info-controller {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .webcam-control-btn {
+        width: 50px;
+        height: 40px;
+        margin: 7px;
+    }
+
+    .webcam {
+        margin: auto;
+        width: auto;
+        width: 99%;
+        height: 600px;
+    }
+
+    .overlay-model {
+        margin: auto;
+        width: auto;
+        width: 99%;
+        height: 600px;
+        /* border: 1px solid green; */
+    }
+}
+
+@media screen and (min-width: 400px)and (max-width:500px) {
+    .side-container {
+        /* display: flex; */
+        /* flex-direction: row; */
+        display: block;
+        flex: 1;
+        /* border: 1px solid red; */
+        width: 100%;
+
+    }
+
+    .webcam-controls {
+        display: flex;
+        justify-content: center;
+        /* border: 1px solid navajowhite; */
+        width: 100%;
+    }
+
+    .header-container {
+        display: block;
+        width: 100%;
+        /* justify-content: space-between; */
+
+    }
+
+    #search-bar {
+        width: 100%;
+    }
+
+    .dropdown {
+        width: 100%;
+
+    }
+
+    #category {
+        width: 100%;
+        height: 50px;
+
+    }
+
+    .info-section {
+        margin-left: 0px;
+    }
+
+    .text-info h1 {
+        font-family: var(--font);
+        font-size: 40px;
+    }
+
+    .text-info p {
+
+        padding-left: 5px;
+        margin-top: 20px;
+        font-weight: 400;
+        padding-right: 5px;
+    }
+
+    .text-info-controller {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .webcam-control-btn {
+        width: 50px;
+        height: 40px;
+        margin: 7px;
+    }
+
+    .webcam {
+        margin: auto;
+        width: auto;
+        width: 99%;
+        height: 600px;
+    }
+
+    .overlay-model {
+        margin: auto;
+        width: auto;
+        width: 99%;
+        height: 600px;
+        /* border: 1px solid green; */
+    }
+}
+
+@media screen and (min-width: 500px)and (max-width:600px) {
+    .side-container {
+        /* display: flex; */
+        /* flex-direction: row; */
+        display: block;
+        flex: 1;
+        /* border: 1px solid red; */
+        width: 100%;
+
+    }
+
+    .webcam-controls {
+        display: flex;
+        justify-content: center;
+        /* border: 1px solid navajowhite; */
+        width: 100%;
+    }
+
+    .header-container {
+        display: block;
+        width: 100%;
+        /* justify-content: space-between; */
+
+    }
+
+    #search-bar {
+        width: 100%;
+    }
+
+    .dropdown {
+        width: 100%;
+
+    }
+
+    #category {
+        width: 100%;
+        height: 50px;
+
+    }
+
+    .info-section {
+        margin-left: 0px;
+    }
+
+    .text-info h1 {
+        font-family: var(--font);
+        font-size: 40px;
+    }
+
+    .text-info p {
+
+        padding-left: 5px;
+        margin-top: 20px;
+        font-weight: 400;
+        padding-right: 5px;
+    }
+
+    .text-info-controller {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .webcam-control-btn {
+        width: 100%;
+        height: 40px;
+        margin: 9px;
+        justify-content: space-evenly;
+    }
+
+    .webcam {
+        margin: auto;
+        width: auto;
+        width: 99%;
+        height: 550px;
+    }
+
+    .overlay-model {
+        margin: auto;
+        width: auto;
+        width: 99%;
+        height: 550px;
+        /* border: 1px solid green; */
+    }
+}
+
+@media screen and (min-width: 600px)and (max-width:800px) {
+    .side-container {
+        /* display: flex; */
+        /* flex-direction: row; */
+        display: block;
+        flex: 1;
+        /* border: 1px solid red; */
+        width: 100%;
+
+    }
+
+    .webcam-controls {
+        display: flex;
+        justify-content: center;
+        /* border: 1px solid navajowhite; */
+        width: 100%;
+    }
+
+    .header-container {
+        display: block;
+        width: 100%;
+        /* justify-content: space-between; */
+
+    }
+
+    #search-bar {
+        width: 100%;
+    }
+
+    .dropdown {
+        width: 100%;
+
+    }
+
+    #category {
+        width: 100%;
+        height: 50px;
+
+    }
+
+    .info-section {
+        margin-left: 0px;
+    }
+
+    .text-info h1 {
+        font-family: var(--font);
+        font-size: 40px;
+    }
+
+    .text-info p {
+
+        padding-left: 5px;
+        margin-top: 20px;
+        font-weight: 400;
+        padding-right: 5px;
+    }
+
+    .text-info-controller {
+        display: flex;
+        margin-top: 30px;
+        justify-content: space-evenly;
+    }
+
+    .btn {
+        /* width: 100%; */
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .webcam-control-btn {
+        width: 100%;
+        height: 40px;
+        margin: 15px;
+        margin: 10px 2% 10px 2%;
+        justify-content: space-evenly;
+    }
+
+    .webcam {
+        margin: auto;
+        width: auto;
+        width: 99%;
+        height: 500px;
+    }
+
+    .overlay-model {
+        margin: auto;
+        width: auto;
+        width: 99%;
+        height: 500px;
+        /* border: 1px solid green; */
+    }
+}
+
+@media screen and (min-width: 800px)and (max-width:1000px) {
+    .side-container {
+        /* display: flex; */
+        /* flex-direction: row; */
+        display: block;
+        flex: 1;
+        /* border: 1px solid red; */
+        width: 100%;
+
+    }
+
+    .webcam-controls {
+        display: flex;
+        justify-content: center;
+        border: 1px solid navajowhite;
+        width: 100%;
+    }
+
+    .header-container {
+        display: block;
+        width: 100%;
+        /* justify-content: space-between; */
+
+    }
+
+    #search-bar {
+        width: 100%;
+    }
+
+    .dropdown {
+        width: 100%;
+
+    }
+
+    #category {
+        width: 100%;
+        height: 50px;
+
+    }
+
+    .info-section {
+        margin-left: 0px;
+    }
+
+    .text-info h1 {
+        font-family: var(--font);
+        font-size: 40px;
+    }
+
+    .text-info p {
+
+        padding-left: 5px;
+        margin-top: 20px;
+        font-weight: 400;
+        padding-right: 5px;
+    }
+
+    .text-info-controller {
+        display: flex;
+        margin-top: 30px;
+        justify-content: space-evenly;
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .webcam-control-btn {
+        width: 100%;
+        height: 50px;
+        margin: 10px;
+        margin: 10px 1% 10px 1%;
+        justify-content: space-evenly;
+        /* border: 1px solid red; */
+    }
+
+    .webcam {
+        margin: auto;
+        width: auto;
+        width: 99%;
+        height: 600px;
+    }
+
+    .overlay-model {
+        margin: auto;
+        width: auto;
+        width: 99%;
+        height: 600px;
+        /* border: 1px solid green; */
+    }
 }

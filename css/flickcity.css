@@ -1,6 +1,6 @@
-.carousel {
-    /* box-sizing: border-box; */
-
+/* .carousel { */
+/* box-sizing: border-box; */
+/* 
     background: #EEE;
     height: 300px;
     margin-top: 20px;
@@ -13,14 +13,14 @@
     background: #8C8;
     border-radius: 5px;
     counter-increment: gallery-cell;
-}
+} */
 
 /* cell number */
-.carousel-cell:before {
+/* .carousel-cell:before {
     display: block;
     text-align: center;
     content: counter(gallery-cell);
     line-height: 300px;
     font-size: 80px;
     color: white;
-}
+} */
