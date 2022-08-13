@@ -89,12 +89,22 @@
         </section>
         <section class="info-section">
             <section class="text-info">
-                <h1 id="content-heading">ARLearn</h1>
-                <p id="introduction">is a technology that uses augmented reality to enchance the quality of education for everyone</p>
-                <label onclick="showHiddenText()" id="read-more-btn" style="display:none;">Read More ...</label>
+                <h1>Taj Mahal</h1>
+                <p id="introduction"></p>
+                <label onclick="showHiddenText()" id="read-more-btn">Read More ...</label>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!4v1660042874402!6m8!1m7!1smZTqFjBGicL-bLNuV8GlAg!2m2!1d27.17474339333423!2d78.04211271378688!3f265.55231916524787!4f5.455326765268367!5f0.7820865974627469" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;display: none;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    id="street-view"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </section>
             <section class="text-info-controller">
-                <button class="btn">Show Street View</button>
+                <button class="btn" id="street-view-button" onclick="showStreetView()">Show Street View</button>
                 <button class="btn">Show Images</button>
                 <button class="btn">Show Information</button>
             </section>
