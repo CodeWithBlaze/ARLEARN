@@ -4,7 +4,7 @@ let isVideoOn = false;
 let webcam = null;
 let classifier = null;
 let isFullScreen = false;
-let adata = null;
+
 function createReadMore(){
     const textShown = text.substring(0,500);
     document.getElementById('read-more-btn').style.display = 'block';
@@ -56,7 +56,8 @@ function maxResult(err,results){
     getInfo(max.label);
     
 }
-function detectAndShow(image){
+function detectAndShow(){
+    const image = document.getElementById('prediction-image')
     classifier.classify(image,maxResult);
 }
 function showHiddenText(){
@@ -83,26 +84,29 @@ function startWebcam(){
 function startStopCamera(){
     const webcamBtn = document.querySelector('.webcam-btn')
     const webcamIcon = document.getElementById('webcam-icon');
+    const captureBtn = document.getElementById('capture-photo')
     if(!isVideoOn){
         startWebcam();
+        captureBtn.style.display='flex';
         webcamIcon.className = 'fa-solid fa-video fa-xl';
         webcamBtn.setAttribute('style','background-color:var(--button-color);')
     }
     else{
+        captureBtn.style.display = 'none';
         webcam.stop();
         webcamIcon.className = 'fa-solid fa-video-slash fa-xl';
         webcamBtn.setAttribute('style','background-color:var(--webcam-off-color);')
     }
     isVideoOn = !isVideoOn;
 }
-document.querySelector('.photo-btn').addEventListener('click',()=>{
+document.getElementById('capture-photo').addEventListener('click',()=>{
     // taking a internal screenshot from the webcam for image classification
     removeModel();
     document.getElementById('loader').style.display = "block";
     let picture  = webcam.snap();
     const image = document.getElementById('prediction-image')
     image.src = picture;
-    detectAndShow(image)
+    image.onload = detectAndShow()
 })
 function removeModel(){
     const viewer = document.getElementById('hotspot-camera-view-demo')
@@ -146,9 +150,9 @@ function showFullScreen(){
 function showPreview(event){
     if(event.target.files.length > 0){
       const src = URL.createObjectURL(event.target.files[0]);
-      const img = document.createElement('img')
+      const img = document.getElementById('prediction-image')
       img.src = src;
-      detectAndShow(img)
+      img.onload = detectAndShow()
     }
 }
 function uploadImage(){

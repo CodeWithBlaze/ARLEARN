@@ -43,6 +43,7 @@
                 <video class="webcam" id="webcam"></video>
                 <div class="overlay-model" id="overlay-model">
                     <p id="model-name">Model Name</p>
+                    <div class="camera-icon-capture" id="capture-photo"><i class="fa-solid fa-camera fa-xl"></i></div>
                     <div class="loader-container">
                         <img src="./assets/loader.gif" id="loader" style="display:none;">
                         <model-viewer 
@@ -74,12 +75,11 @@
                         </model-viewer>
                         
                     </div>
-                    <img id="prediction-image" width="640px" height="auto">
+                    <img id="prediction-image" style="display:none;object-fit:cover;" width="640px" height="640px;">
                 </div>
             </div>
             <div class="webcam-controls">
                 <button class="webcam-control-btn webcam-btn" onclick="startStopCamera()"><i class="fa-solid fa-video-slash fa-xl" id="webcam-icon"></i></button>
-                <button class="webcam-control-btn webcam-controls-background photo-btn"><i class="fa-solid fa-camera fa-xl"></i></button>
                 <button class="webcam-control-btn webcam-controls-background photo-btn" onclick="uploadImage()"><i class="fa-solid fa-upload fa-xl"></i></button>
                 <button class="webcam-control-btn webcam-controls-background" onclick="showFullScreen()"><i class="fa-solid fa-expand fa-xl"></i></button>
                 <button class="webcam-control-btn webcam-controls-background" onclick="removeModel()"><i class="fa-solid fa-xmark fa-2xl"></i></button>
