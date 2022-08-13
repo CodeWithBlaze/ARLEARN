@@ -25,7 +25,7 @@ function requestModel(label){
         viewer.style.display='block';
         viewer.src = 'https://cors-anywhere.herokuapp.com/'+data.url;
         
-});
+    });
 }
 function getInfo(query){
     fetch("https://en.wikipedia.org/w/api.php?format=json&action=query&origin=*&prop=extracts&exintro&explaintext&redirects=1&titles="+query).then(function(resp) {
@@ -129,7 +129,6 @@ document.getElementById('capture-photo').addEventListener('click',()=>{
 function removeModel(){
     const viewer = document.getElementById('hotspot-camera-view-demo')
     document.getElementById('model-name').innerText = 'Model Name';
-    viewer.src = "";
     viewer.style.display = 'none';
 }
 function updateElementsForFullScreen(){
@@ -167,6 +166,7 @@ function showFullScreen(){
 }
 function showPreview(event){
     if(event.target.files.length > 0){
+      removeModel()
       const src = URL.createObjectURL(event.target.files[0]);
       const img = document.getElementById('prediction-image')
       img.src = src;
@@ -176,6 +176,13 @@ function showPreview(event){
 function uploadImage(){
     document.getElementById('imageUpload').click();
 }
+document.getElementById('read-more-btn').addEventListener('change',()=>{
+    const ReadMoreButton = document.getElementById('read-more-btn')
+    if(text.length < 500)
+        ReadMoreButton.style.display = 'none';
+    else
+        ReadMoreButton.style.display = 'block';
+})
 function getSearchResult(){
     removeModel()
     let query = document.getElementById('search-bar').value;
@@ -184,10 +191,10 @@ function getSearchResult(){
         words[i] = (words[i][0]).toUpperCase() + words[i].slice(1); 
     }
     query = words.join(' ')
-    console.log(query);
     requestModel(query)
 }
 function init(){
     initDectectionModel();
+    
 }
 init()

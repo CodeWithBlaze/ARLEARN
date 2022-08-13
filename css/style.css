@@ -207,3 +207,12 @@ button{
     left:50%;
     transform: translate(-50%,-50%);    
 }
+#street-view{
+    border-radius: 5px;
+}
+#prediction-image{
+    display:none;
+    margin-top:150px;
+    object-fit:contain;
+    background-color: white;
+}
