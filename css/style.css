@@ -190,7 +190,7 @@ button{
 .model-container{
     width: 100%;
     height:100%;
-    display: none;
+    /* display: none; */
     background-color:transparent;
 }
 .camera-icon-capture{
@@ -215,4 +215,65 @@ button{
     margin-top:150px;
     object-fit:contain;
     background-color: white;
+}
+
+@media screen and (max-width: 400px) {
+    body{
+        padding: 0px;
+        padding-top:10px;
+        width: 100%;
+    }
+    .header-container{
+        flex-wrap: wrap;
+    }
+    .side-container{
+        flex-wrap: wrap;
+    }
+    #search-bar{
+        width:90vw;
+        margin:0px;
+        margin-bottom: 5px;
+    }
+    #category{
+        width: 90vw;
+        margin:0px;
+    }
+    .webcam{
+        width: 100%;
+    }
+    .overlay-model{
+        width: 100%;
+    }
+    .webcam-and-model-container{
+        width:100%;
+        overflow: hidden;
+    }
+    .webcam-section{
+        width: 100%;
+        /* overflow: hidden; */
+    }
+    .webcam-controls{
+        flex-wrap: wrap;
+    }
+    .info-section{
+        width: 100%;
+        margin-left: 0px;
+    }
+    .text-info-controller{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .btn{
+        width: 100%;
+        margin-bottom: 15px;
+        margin-right: 0px;
+    }
+    .text-info h1{
+        text-align: center;
+    }
+    .text-info p{
+        text-align: center;
+    }
 }
