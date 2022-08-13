@@ -6,92 +6,92 @@ let webcam = null;
 let classifier = null;
 let isFullScreen = false;
 
-function createReadMore(){
-    const textShown = text.substring(0,500);
+function createReadMore() {
+    const textShown = text.substring(0, 500);
     document.getElementById('introduction').innerText = textShown;
 }
-function initDectectionModel(){
+function initDectectionModel() {
     //initialising the image classification classifier
-    classifier =  ml5.imageClassifier('../model/model.json',()=>{
-      console.log("model loaded")
+    classifier = ml5.imageClassifier('../model/model.json', () => {
+        console.log("model loaded")
     });
 }
-function requestModel(label){
+function requestModel(label) {
     document.getElementById('model-name').innerText = label;
     const frame = document.getElementById('model-frame')
-    frame.style.display='block';
+    frame.style.display = 'block';
     frame.src = `http://localhost:3000/test?name=${label}`;
-    
+
 }
-function maxResult(err,results){
+function maxResult(err, results) {
     // finding the best classification confidence along with its label
-    let max = {label:results[0].label,confidence:results[0].confidence}
-    for(let i in results){
+    let max = { label: results[0].label, confidence: results[0].confidence }
+    for (let i in results) {
         let score = results[i].confidence;
-        if(score > max.confidence)
+        if (score > max.confidence)
             max = {
-                label:results[i].label,
-                confidence:results[i].confidence
+                label: results[i].label,
+                confidence: results[i].confidence
             }
     }
     document.getElementById('loader').style.display = "none";
     requestModel(max.label);
-    
+
 }
-function detectAndShow(image){
-    classifier.classify(image,maxResult);
+function detectAndShow(image) {
+    classifier.classify(image, maxResult);
 }
-function showHiddenText(){
+function showHiddenText() {
     const readMore = document.getElementById('read-more-btn')
-    if(!isHiddenTextShown){
-        const textHidden = text.substring(500,text.length);
+    if (!isHiddenTextShown) {
+        const textHidden = text.substring(500, text.length);
         document.getElementById('introduction').innerText += textHidden;
         readMore.innerText = 'Show Less';
         isHiddenTextShown = true;
     }
-    else{
+    else {
         createReadMore();
         readMore.innerText = 'Read More';
         isHiddenTextShown = false;
     }
 }
-function startWebcam(){
+function startWebcam() {
     // starting webcam
     const webcamElement = document.getElementById('webcam');
     const canvasElement = document.getElementById('canvas');
     webcam = new Webcam(webcamElement, 'environment', canvasElement);
     webcam.start()
 }
-function startStopCamera(){
+function startStopCamera() {
     const webcamBtn = document.querySelector('.webcam-btn')
     const webcamIcon = document.getElementById('webcam-icon');
-    if(!isVideoOn){
+    if (!isVideoOn) {
         startWebcam();
         webcamIcon.className = 'fa-solid fa-video fa-xl';
-        webcamBtn.setAttribute('style','background-color:var(--button-color);')
+        webcamBtn.setAttribute('style', 'background-color:var(--button-color);')
     }
-    else{
+    else {
         webcam.stop();
         webcamIcon.className = 'fa-solid fa-video-slash fa-xl';
-        webcamBtn.setAttribute('style','background-color:var(--webcam-off-color);')
+        webcamBtn.setAttribute('style', 'background-color:var(--webcam-off-color);')
     }
     isVideoOn = !isVideoOn;
 }
-document.querySelector('.photo-btn').addEventListener('click',()=>{
+document.querySelector('.photo-btn').addEventListener('click', () => {
     // taking a internal screenshot from the webcam for image classification
     removeModel();
     document.getElementById('loader').style.display = "block";
-    let picture  = webcam.snap();
+    let picture = webcam.snap();
     const image = document.createElement('img')
     image.src = picture;
     detectAndShow(image)
 })
-function removeModel(){
+function removeModel() {
     const frame = document.getElementById('model-frame')
     frame.style.display = "none";
     frame.src = "";
 }
-function updateElementsForFullScreen(){
+function updateElementsForFullScreen() {
     const webcam = document.getElementById('webcam')
     const model = document.getElementById('overlay-model');
     webcam.style.width = '100%';
@@ -101,7 +101,7 @@ function updateElementsForFullScreen(){
     model.style.height = '100%';
     model.style.marginTop = '0px';
 }
-function updateElementForExitFullScreen(){
+function updateElementForExitFullScreen() {
     const webcam = document.getElementById('webcam')
     const model = document.getElementById('overlay-model');
     webcam.style.width = '640px';
@@ -111,44 +111,70 @@ function updateElementForExitFullScreen(){
     model.style.height = '480px';
     model.style.marginTop = '15px';
 }
-function showFullScreen(){
+function showFullScreen() {
     const container = document.getElementById('webcam-and-model-container');
-    if(container.requestFullscreen)
+    if (container.requestFullscreen)
         container.requestFullscreen();
-    container.addEventListener('fullscreenchange',()=>{
-        if(document.fullscreenElement)
-            updateElementsForFullScreen();    
+    container.addEventListener('fullscreenchange', () => {
+        if (document.fullscreenElement)
+            updateElementsForFullScreen();
         else
             updateElementForExitFullScreen();
-        
+
     })
 
 }
-function showPreview(event){
-    if(event.target.files.length > 0){
-      const src = URL.createObjectURL(event.target.files[0]);
-      const img = document.createElement('img')
-      img.src = src;
-      detectAndShow(img)
+function showPreview(event) {
+    if (event.target.files.length > 0) {
+        const src = URL.createObjectURL(event.target.files[0]);
+        const img = document.createElement('img')
+        img.src = src;
+        detectAndShow(img)
     }
 }
-function uploadImage(){
+function uploadImage() {
     document.getElementById('imageUpload').click();
 }
-function getSearchResult(){
+function getSearchResult() {
     removeModel()
     let query = document.getElementById('search-bar').value;
     let words = query.split(' ');
-    for(let i in words){
-        words[i] = (words[i][0]).toUpperCase() + words[i].slice(1); 
+    for (let i in words) {
+        words[i] = (words[i][0]).toUpperCase() + words[i].slice(1);
     }
     query = words.join(' ')
     console.log(query);
     requestModel(query)
 }
-function init(){
+function init() {
     initDectectionModel();
     createReadMore();
-    
+
 }
 init()
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
