@@ -190,7 +190,7 @@ button{
 .model-container{
     width: 100%;
     height:100%;
-    /* display: none; */
+    display: none;
     background-color:transparent;
 }
 .camera-icon-capture{
@@ -216,7 +216,36 @@ button{
     object-fit:contain;
     background-color: white;
 }
-
+.help{
+    position:fixed;
+    z-index: 9999;
+    left: 0px;
+    top: 0px;
+    background-color:rgba(0,0,0,0.8);
+    width: 100%;
+    height:100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.swiper {
+    width: 100%;
+    height: 600px;
+    background-color: green;
+}
+.swiper-image{
+    width: 100%;
+    object-fit: contain;
+    height:100%;
+}
+#carousel-close{
+    position: absolute;
+    right: 10px;
+    top:25px;
+    z-index: 999999;
+    color:red;
+    cursor: pointer;
+}
 @media screen and (max-width: 400px) {
     body{
         padding: 0px;
@@ -225,6 +254,7 @@ button{
     }
     .header-container{
         flex-wrap: wrap;
+        padding-left:18px;
     }
     .side-container{
         flex-wrap: wrap;
@@ -239,10 +269,12 @@ button{
         margin:0px;
     }
     .webcam{
-        width: 100%;
+        width:392px;
+        height: 478px;
     }
     .overlay-model{
-        width: 100%;
+        width:392px;
+        height: 478px;
     }
     .webcam-and-model-container{
         width:100%;
@@ -257,20 +289,25 @@ button{
     }
     .info-section{
         width: 100%;
-        margin-left: 0px;
+        margin-left:10px;
+        margin-right:10px;
+        padding: 0px;
     }
     .text-info-controller{
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         width: 100%;
+        padding: 30px;
     }
+    
     .btn{
         width: 100%;
         margin-bottom: 15px;
         margin-right: 0px;
     }
     .text-info h1{
+        padding-top: 15px;
         text-align: center;
     }
     .text-info p{

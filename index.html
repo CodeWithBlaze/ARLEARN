@@ -17,10 +17,11 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
     <script defer src="js/database.js"></script>
+    <script  defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script defer src="js/app.js"></script>
     <script defer src="js/model.js"></script>
     <script defer src="https://kit.fontawesome.com/0d0a5eddb4.js" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 </head>
 <body>
     <header>
@@ -48,9 +49,9 @@
                         <img src="./assets/loader.gif" id="loader" style="display:none;">
                         <model-viewer 
                                 alt="a 3d model"
-                                src="https://firebasestorage.googleapis.com/v0/b/arlearn-3f847.appspot.com/o/export.glb?alt=media&token=d154b003-9a87-4e78-a598-553fceb8c66f" 
+                                src="" 
                                 class="model-container" 
-                                ar ar-modes="scene-viewer quick-look" 
+                                ar ar-modes="scene-viewer webxr quick-look" 
                                 seamless-poster 
                                 shadow-intensity="1" 
                                 camera-controls 
@@ -58,7 +59,7 @@
                                 id="hotspot-camera-view-demo" 
                                 environment-image="neutral"
                                 data-name="abc" 
-                                camera-orbit="-4.829deg 65.78deg auto">
+                                camera-orbit="-4.829deg 15.78deg auto">
                                 <div slot="progress-bar" class="progress-bar-container" id="progress-bar-container">
                                     <div class="progress-bar-sub-container">
                                         <h3 class="status">Loading Model</h3>
@@ -83,7 +84,7 @@
                 <button class="webcam-control-btn webcam-controls-background photo-btn" onclick="uploadImage()"><i class="fa-solid fa-upload fa-xl"></i></button>
                 <button class="webcam-control-btn webcam-controls-background" onclick="showFullScreen()"><i class="fa-solid fa-expand fa-xl"></i></button>
                 <button class="webcam-control-btn webcam-controls-background" onclick="removeModel()"><i class="fa-solid fa-xmark fa-2xl"></i></button>
-                <button class="webcam-control-btn webcam-controls-background"><i class="fa-solid fa-question fa-xl"></i></button>
+                <button class="webcam-control-btn webcam-controls-background" onclick="showHelp()"><i class="fa-solid fa-question fa-xl"></i></button>
             </div>
             <input type="file"  id="imageUpload" style="display:none;" onchange="showPreview(event)">
             
@@ -94,7 +95,7 @@
                 <p id="introduction">is a technology that uses augmented reality to enchance the quality of education for everyone</p>
                 <label onclick="showHiddenText()" id="read-more-btn" style="display: none;">Read More ...</label>
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!4v1660042874402!6m8!1m7!1smZTqFjBGicL-bLNuV8GlAg!2m2!1d27.17474339333423!2d78.04211271378688!3f265.55231916524787!4f5.455326765268367!5f0.7820865974627469" 
+                    src="" 
                     width="100%" 
                     height="450" 
                     style="border:0;display: none;" 
@@ -110,6 +111,23 @@
                 <button class="btn">Show Information</button>
             </section>
         </section>
+    </section>
+    <!-- the helper slider -->
+    <section class="help" id="help">
+        <i class="fa-solid fa-circle-xmark fa-2xl" id="carousel-close"></i>
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"><img src="https://preview.redd.it/e5e3u7wlrxw81.jpg?auto=webp&s=e2f21acc58e27c309693bc3be117ce0a84a09c54" class="swiper-image"></div>
+              <div class="swiper-slide"><img src="https://i.pinimg.com/originals/27/7d/f7/277df72f8872119556174854781420ff.jpg" class="swiper-image"></div>
+              <div class="swiper-slide"><img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2022/01/Marvels-Spider-Man-Amazing-Spider-Man-4K.jpg" class="swiper-image"></div>
+              ...
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
     </section>
     <canvas id="canvas" class="d-none" style="display:none;"></canvas>
 </body>

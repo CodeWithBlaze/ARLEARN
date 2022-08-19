@@ -23,7 +23,7 @@ function requestModel(label){
         data = res.docs[0].data()
         const viewer  = document.getElementById('hotspot-camera-view-demo')
         viewer.style.display='block';
-        viewer.src = 'https://cors-anywhere.herokuapp.com/'+data.url;
+        viewer.src = data.url;
         
     });
 }
@@ -144,12 +144,24 @@ function updateElementsForFullScreen(){
 function updateElementForExitFullScreen(){
     const webcam = document.getElementById('webcam')
     const model = document.getElementById('overlay-model');
-    webcam.style.width = '640px';
-    webcam.style.height = '480px';
+    const computerScreenWidth = 640;
+    const computerScreenHeight = 480;
+    const mobileScreenWidth = 392;
+    const mobileScreenHeight = 478;
     webcam.style.marginTop = '15px';
-    model.style.width = '640px';
-    model.style.height = '480px';
     model.style.marginTop = '15px';
+    if(screen.width < 400 ){
+        webcam.style.width = mobileScreenWidth+'px';
+        webcam.style.height = mobileScreenHeight+'px';
+        model.style.width = mobileScreenWidth+'px';
+        model.style.height = mobileScreenHeight+'px';
+    }
+    else{
+        webcam.style.width = computerScreenWidth+'px';
+        webcam.style.height = computerScreenHeight+'px';
+        model.style.width = computerScreenWidth+'px';
+        model.style.height = computerScreenHeight+'px';
+    }
 }
 function showFullScreen(){
     const container = document.getElementById('webcam-and-model-container');
@@ -193,8 +205,30 @@ function getSearchResult(){
     query = words.join(' ')
     requestModel(query)
 }
+const swiper = new Swiper('.swiper', {
+    direction: 'vertical',
+    loop: true,
+  
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+function showHelp(){
+    document.getElementById('help').style.display = "flex";
+}
 function init(){
     initDectectionModel();
-    
+    document.getElementById('carousel-close').addEventListener('click',()=>{
+        document.getElementById('help').style.display = "none";
+    })
 }
 init()
