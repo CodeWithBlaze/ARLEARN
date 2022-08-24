@@ -3,9 +3,8 @@ let isHiddenTextShown = false;
 let isVideoOn = false;
 let webcam = null;
 let classifier = null;
-let isStreetView=false;
 let isFullScreen = false;
-
+let images = [];
 function createReadMore(){
     const textShown = text.substring(0,500);
     document.getElementById('read-more-btn').style.display = 'block';
@@ -24,7 +23,9 @@ function requestModel(label){
         const viewer  = document.getElementById('hotspot-camera-view-demo')
         viewer.style.display='block';
         viewer.src = data.url;
-        
+        images = data.images
+        const streetView=document.getElementById("street-view");
+        streetView.src = data.streetView
     });
 }
 function getInfo(query){
@@ -35,6 +36,7 @@ function getInfo(query){
         document.getElementById('content-heading').innerText = title;
         text = extract;
         createReadMore();
+        document.querySelector('.text-info-controller').style.display = "flex";
     })
 }
 function maxResult(err,results){
@@ -79,18 +81,29 @@ function showStreetView(){
     const streetView=document.getElementById("street-view");
     const readMore = document.getElementById('read-more-btn');
     const modelText=document.getElementById('introduction');
-    if(!isStreetView){
-        streetView.style.display="inline";
-        readMore.style.display="none";
-        modelText.style.display="none";
-        isStreetView=true;
-    }
-    else{
-        streetView.style.display="none";
-        readMore.style.display="inline";
-        modelText.style.display="inline";
-        isStreetView=false;
-    }
+    const images_container = document.getElementById('model-images-container')
+    streetView.style.display="inline";
+    images_container.style.display = "none";
+    readMore.style.display="none";
+    modelText.style.display="none";
+    
+}
+function showImages(){
+    const streetView=document.getElementById("street-view");
+    const readMore = document.getElementById('read-more-btn');
+    const modelText=document.getElementById('introduction');
+    streetView.style.display="none";
+    readMore.style.display="none";
+    modelText.style.display="none";
+}
+function showInformation(){
+    const streetView=document.getElementById("street-view");
+    const readMore = document.getElementById('read-more-btn');
+    const modelText=document.getElementById('introduction');
+    const images_container = document.getElementById('model-images-container')
+    streetView.style.display="none";
+    readMore.style.display="inline";
+    modelText.style.display="block";
 }
 function startWebcam(){
     // starting webcam
@@ -129,6 +142,7 @@ document.getElementById('capture-photo').addEventListener('click',()=>{
 function removeModel(){
     const viewer = document.getElementById('hotspot-camera-view-demo')
     document.getElementById('model-name').innerText = 'Model Name';
+    removeAnnotations();
     viewer.style.display = 'none';
 }
 function updateElementsForFullScreen(){
@@ -225,10 +239,12 @@ const swiper = new Swiper('.swiper', {
 function showHelp(){
     document.getElementById('help').style.display = "flex";
 }
+
 function init(){
     initDectectionModel();
     document.getElementById('carousel-close').addEventListener('click',()=>{
         document.getElementById('help').style.display = "none";
     })
+    
 }
 init()

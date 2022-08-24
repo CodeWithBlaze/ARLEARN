@@ -19,7 +19,9 @@ function addAnnotation(annotations){
 
     return annotationString
 }
-
+function removeAnnotations(){
+    document.querySelectorAll('.Hotspot').forEach(item=>item.remove())
+}
 function addHotspotListener(){
     const modelViewer1 = document.querySelector("#hotspot-camera-view-demo");
     const annotationClicked = (annotation) => {
