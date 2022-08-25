@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/Login.css">
+    <link rel="stylesheet" href="css/SignUp.css">
     <link rel="stylesheet" href="css/model.css">
     <script defer type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
@@ -24,16 +24,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 </head>
 <body>
-    <div class="outerMainDiv" >
-      <div class="mainDiv"><h2>SignIn</h2></div>
-      <div class="inputDiv">
-        <input type="text" placeholder="email" id="userEmail" /><br />
-        <input type="text" placeholder="password" id="userPass" />
-      </div>
-      <a href="./ForgetPass.html"><div class="forget">Forget your password</div></a>
-      <div class="login">
-        <div class="innerLogin">Log In</div>
-        <a href="./SignUp.html"><div class="innerLogin1">Sign Up</div></a>
+    <div class="outerMainDiv">
+        <div class="mainDiv"><h2>SignUp</h2></div>
+        <div class="inputDiv">
+          <input type="text" placeholder="email" id="email" /><br />
+          <input type="text" placeholder="password" id="password" />
+          <input type="number" placeholder="Age" id="age" /><br />
+        </div>
+        <div class="login">
+          <div class="innerLogin" onclick="signIn()">Sign Up</div>
+          <a href="./index.html"><div class="innerLogin1">Log in</div></a>
+        </div>
       </div>
     </div>
 </body> 

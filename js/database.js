@@ -14,3 +14,10 @@ const storage = firebase.storage();
 async function fetchModelData(prediction){
     return await db.collection('Models').where('name','==',prediction).get()
 }
+async function signIn(){
+    // console.log("dsad")
+    const email=document.getElementById('email').value;
+    const password=document.getElementById("password").value;
+    const age=document.getElementById('age').value;
+    console.log(email,age,password)
+}

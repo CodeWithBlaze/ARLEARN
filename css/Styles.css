@@ -133,10 +133,11 @@ h1{
     border: none;
     font-family: --font-family;
 }
-a{
-    background-color: rgb(119, 235, 229);
+.anchor-button{
     text-decoration: none;
     color: white;
+    background-color: rgb(119, 235, 229);
+
 }
 .value {
     font-size: 10px;
