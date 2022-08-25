@@ -16,6 +16,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
     <script defer src="js/database.js"></script>
     <script  defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script defer src="js/app.js"></script>
@@ -25,7 +26,10 @@
 </head>
     <body>
     <header>
-        <h1>ARLearn</h1>
+        <div class="logout-button">
+            <h1>ARLearn</h1>
+            <button class="logout" onclick="logOut()">LogOut</button>
+        </div>            
         <model-viewer 
             alt="a 3d model"
             src="./model/india_gate.glb" 
