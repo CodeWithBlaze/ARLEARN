@@ -50,6 +50,7 @@ async function signUp(){
                 age:age
             })
         })
+        window.location = './index.html'
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
