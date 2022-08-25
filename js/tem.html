@@ -10,8 +10,9 @@
     <a  id="ar" href="">Avocado</a>
     <script>
         const url = window.location.href;
-        let fileLink = url.split('?')[1]
-        fileLink = fileLink.substring(5)
+        const index = url.indexOf("?file=")
+        console.log(index)
+        const fileLink = url.substring(index+6);
         const sceneViewer = document.getElementById('ar')
         sceneViewer.href = `intent://arvr.google.com/scene-viewer/1.0?file=${fileLink}#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;`;
         
