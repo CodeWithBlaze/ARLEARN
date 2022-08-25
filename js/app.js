@@ -26,6 +26,9 @@ function requestModel(label){
         images = data.images
         const streetView=document.getElementById("street-view");
         streetView.src = data.streetView
+        document.getElementById('ar-button').addEventListener('click',(event)=>{
+            console.log(event.url)
+        })
     });
 }
 function getInfo(query){
@@ -245,6 +248,8 @@ function init(){
     document.getElementById('carousel-close').addEventListener('click',()=>{
         document.getElementById('help').style.display = "none";
     })
-    
+    document.getElementById('hotspot-camera-view-demo').addEventListener('click',event=>{
+        console.log(event)
+    })
 }
 init()
