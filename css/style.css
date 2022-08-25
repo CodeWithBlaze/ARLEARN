@@ -249,6 +249,20 @@ button{
     color:red;
     cursor: pointer;
 }
+#ar-button{
+    position:relative;
+    top:90%;
+    z-index: 9999;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    padding: 18px;
+    font-family: Quicksand;
+    border:none;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color:blue;
+}
 @media screen and (max-width: 400px) {
     body{
         padding: 0px;
@@ -321,4 +335,5 @@ button{
         min-height: fit-content;
         padding-right: 15px;
     }
+    
 }

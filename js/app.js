@@ -222,6 +222,10 @@ function getSearchResult(){
     query = words.join(' ')
     requestModel(query)
 }
+function goAr(){
+    const modelViewerSource = document.getElementById('hotspot-camera-view-demo').src;
+    window.location.href = window.location.href + `/js/tem.html?file=${modelViewerSource}`
+}
 const swiper = new Swiper('.swiper', {
     direction: 'vertical',
     loop: true,
