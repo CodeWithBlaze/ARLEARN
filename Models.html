@@ -25,34 +25,17 @@
 </head>
 <body>
     <header>
-        <div style="width: 100%;display:flex;justify-content:center;" id="google_translate_element"></div>
+        <div style="display:flex;justify-content:center;align-items:center" id="google_translate_element"></div>
         <div class="header-container">
             <div class="search-bar-container">
                 <input id="search-bar" placeholder="Search">
                 <i class="fa-solid fa-magnifying-glass search-icon" onclick="getSearchResult()"></i>
             </div>
+            
         </div>
     </header>
-        
-    <!-- the helper slider -->
-    <section class="help" id="help">
-        <i class="fa-solid fa-circle-xmark fa-2xl" id="carousel-close"></i>
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide"><img src="https://preview.redd.it/e5e3u7wlrxw81.jpg?auto=webp&s=e2f21acc58e27c309693bc3be117ce0a84a09c54" class="swiper-image"></div>
-              <div class="swiper-slide"><img src="https://i.pinimg.com/originals/27/7d/f7/277df72f8872119556174854781420ff.jpg" class="swiper-image"></div>
-              <div class="swiper-slide"><img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2022/01/Marvels-Spider-Man-Amazing-Spider-Man-4K.jpg" class="swiper-image"></div>
-              ...
-            </div>
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-    </section>
-    
     <section class="side-container">
+        
         <section class="webcam-section">
             <div id="webcam-and-model-container">
                 <video class="webcam" id="webcam"></video>
@@ -87,6 +70,9 @@
                                     <label id="cross" onclick="hideInfoBox()">X</label>
                                     <p id="info-para">Information</p>
                                 </div>
+                                <button slot="ar-button" id="ar-button">
+                                    View in your space
+                                </button>
                         </model-viewer>
                         
                     </div>
@@ -107,7 +93,9 @@
         <section class="info-section">
             <section class="text-info">
                 <label onclick="showHiddenText()" id="read-more-btn" style="display: none;">Read More ...</label>
-                <div id="model-images-container" style="display:none;"></div>
+                <div id="model-images-container" style="display:none;">
+                    
+                </div>
                 <iframe 
                     src="" 
                     width="100%" 
@@ -126,7 +114,24 @@
             </section>
         </section>
     </section>
-    <!-- <canvas id="canvas" class="d-none" style="display:none;"></canvas> -->
+    <!-- the helper slider -->
+    <section class="help" id="help">
+        <i class="fa-solid fa-circle-xmark fa-2xl" id="carousel-close"></i>
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"><img src="https://preview.redd.it/e5e3u7wlrxw81.jpg?auto=webp&s=e2f21acc58e27c309693bc3be117ce0a84a09c54" class="swiper-image"></div>
+              <div class="swiper-slide"><img src="https://i.pinimg.com/originals/27/7d/f7/277df72f8872119556174854781420ff.jpg" class="swiper-image"></div>
+              <div class="swiper-slide"><img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2022/01/Marvels-Spider-Man-Amazing-Spider-Man-4K.jpg" class="swiper-image"></div>
+              ...
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+    <canvas id="canvas" class="d-none" style="display:none;"></canvas>
     <script type="text/javascript">
         function googleTranslateElementInit() {
           new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
