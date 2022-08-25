@@ -1,0 +1,144 @@
+:root{
+    --button-color:#418EF2;
+    --label-color:#418EF2;
+    --background-color:white;
+    --border-color:grey;
+    --search-bar-color-background:#ffffff;
+    --font:Quicksand;
+    --webcam-off-color:red;
+    --font-family:Quicksand
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: white;
+}
+body{
+    /* padding: 30px; */
+    box-sizing: border-box;
+}
+header{
+    padding: 20px;
+}
+h1{
+    font-size: 40px;
+    padding-left: 10px;
+    padding-top: 15px;
+    font-family: Quicksand;
+}
+.image-model-div{
+    background-color:rgb(240, 240, 240);
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.image-model-div img{
+    height: 250px;
+    width: 100%;
+    border-radius: 10px;
+}
+.mainHead {
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    text-align: left;
+    margin-left: 5%;
+    font-family: Quicksand;
+    margin-top: 5px;
+}
+
+.demoImgList {
+    border: 1px solid white;
+    display: flex;
+    overflow-y: auto;
+    margin: 4%;
+    border-radius: 15px;
+}
+
+.demoimginnerlist {
+    display: inline-block;
+    margin: 1%;
+    border-radius:10;
+}
+
+.progress-bar-sub-container {
+    border-radius: 15px;
+    width: 250px;
+    height: 150px;
+}
+.model-container{
+    width: 100%;
+    height:200px;
+}
+
+.mainImg {
+    /* border: 1px solid red; */
+    background-color: rgb(244, 252, 250);
+}
+
+.mainImg1 {
+    width: 100%;
+    height: 150px;
+    background-color: rgb(244, 252, 250);
+
+
+}
+
+#cars {
+    width: 90%;
+    height: 40px;
+    background-color: rgb(204, 245, 231);
+    text-align: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-top: 10%;
+    border: 1px solid black;
+    background-color: rgb(244, 252, 250);
+
+    /* height: auto; */
+}
+
+.drop {
+    margin: 10%;
+    margin: auto;
+    width: auto;
+    width: 80%;
+    font-family:--font-family ;
+}
+.cars {
+    font-size: 25px;
+    margin-top: 10px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+.center {
+    text-align: center;
+    height: 60vh;
+    margin-top: 40%;
+}
+.btn {
+    width: 90%;
+    background-color: rgb(119, 235, 229);
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    height: 40px;
+    border: none;
+    color: white;
+    font-family: --font-family;
+    text-decoration: none;
+}
+.value {
+    font-size: 10px;
+    font-weight: bold;
+}
+.btn-div {
+    margin: auto;
+    width: auto;
+    text-align: center;
+}

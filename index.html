@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/model.css">
     <script defer type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
@@ -23,129 +23,27 @@
     <script defer src="https://kit.fontawesome.com/0d0a5eddb4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 </head>
-<body>
-    <header>
-        <div class="header-container">
-            <div class="search-bar-container">
-                <input id="search-bar" placeholder="Search">
-                <i class="fa-solid fa-magnifying-glass search-icon" onclick="getSearchResult()"></i>
+    <body>
+        <div class="app-intro-div">
+            <div class="mainImg">
+                <img class="mainImg1" src='./assets/arnew.jpg'>
             </div>
-            <div>
-                <select id="category">
-                    <option value="heritage">Heritage and Culture</option>
-                </select>
-            </div>
-        </div>
-    </header>
-    <section class="side-container">
-        
-        <section class="webcam-section">
-            <div id="webcam-and-model-container">
-                <video class="webcam" id="webcam"></video>
-                <div class="overlay-model" id="overlay-model">
-                    <p id="model-name">Model Name</p>
-                    <div class="camera-icon-capture" id="capture-photo"><i class="fa-solid fa-camera fa-xl"></i></div>
-                    <div class="loader-container">
-                        <img src="./assets/loader.gif" id="loader" style="display:none;">
-                        <model-viewer 
-                                alt="a 3d model"
-                                src="" 
-                                class="model-container" 
-                                ar ar-modes="scene-viewer webxr quick-look" 
-                                seamless-poster 
-                                shadow-intensity="1" 
-                                camera-controls 
-                                enable-pan 
-                                id="hotspot-camera-view-demo" 
-                                environment-image="neutral"
-                                data-name="abc" 
-                                camera-orbit="-4.829deg 15.78deg auto">
-                                <div slot="progress-bar" class="progress-bar-container" id="progress-bar-container">
-                                    <div class="progress-bar-sub-container">
-                                        <h3 class="status">Loading Model</h3>
-                                        <div class="progress-bar-custom" id="progress"></div>
-                                    </div>
-                                </div>
-                                <button class="ar-controls" onclick="toggleBackground()">
-                                    <i class="fa-solid fa-circle-half-stroke fa-2xl"></i>
-                                </button>
-                                <div class="info-box" id="info-box">
-                                    <label id="cross" onclick="hideInfoBox()">X</label>
-                                    <p id="info-para">Information</p>
-                                </div>
-                        </model-viewer>
-                        
+            <div class="center">
+                <label class="cars">Select Your Age:<br /></label>
+                <div class="drop">
+                    <div>
+                        <select name="cars" id="cars">
+                            <option value="kid" class="value">5-10 years</option>
+                            <option value="teen" class="value">11-20 years</option>
+                            <option value="adult" class="value">21-30 years</option>
+                        </select>
                     </div>
-                    <img id="prediction-image" width="640px" height="480px;">
+                    <br /><br />
+                    <div class="btn-div">
+                        <button class="btn">Submit</button>
+                    </div>
                 </div>
             </div>
-            <div class="webcam-controls">
-                <button class="webcam-control-btn webcam-btn" onclick="startStopCamera()"><i class="fa-solid fa-video-slash fa-xl" id="webcam-icon"></i></button>
-                <button class="webcam-control-btn webcam-controls-background photo-btn" onclick="uploadImage()"><i class="fa-solid fa-upload fa-xl"></i></button>
-                <button class="webcam-control-btn webcam-controls-background" onclick="showFullScreen()"><i class="fa-solid fa-expand fa-xl"></i></button>
-                <button class="webcam-control-btn webcam-controls-background" onclick="removeModel()"><i class="fa-solid fa-xmark fa-2xl"></i></button>
-                <button class="webcam-control-btn webcam-controls-background" onclick="showHelp()"><i class="fa-solid fa-question fa-xl"></i></button>
-            </div>
-            <div id="google_translate_element"></div>
-            <input type="file"  id="imageUpload" style="display:none;" onchange="showPreview(event)">
-            
-        </section>
-        <section class="info-section">
-            <section class="text-info">
-                <h1 id="content-heading">ARLearn</h1>
-                <p id="introduction">is a technology that uses augmented reality to enchance the quality of education for everyone</p>
-                <label onclick="showHiddenText()" id="read-more-btn" style="display: none;">Read More ...</label>
-                <div id="model-images-container" style="display:none;">
-                    
-                </div>
-                <iframe 
-                    src="" 
-                    width="100%" 
-                    height="450" 
-                    style="border:0;display: none;" 
-                    allowfullscreen 
-                    loading="lazy" 
-                    id="street-view"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </section>
-            <section class="text-info-controller">
-                <button class="btn" id="street-view-button" onclick="showStreetView()">Show Street View</button>
-                <button class="btn">Show Images</button>
-                <button class="btn" onclick="showInformation()">Show Information</button>
-            </section>
-        </section>
-    </section>
-    <!-- the helper slider -->
-    <section class="help" id="help">
-        <i class="fa-solid fa-circle-xmark fa-2xl" id="carousel-close"></i>
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide"><img src="https://preview.redd.it/e5e3u7wlrxw81.jpg?auto=webp&s=e2f21acc58e27c309693bc3be117ce0a84a09c54" class="swiper-image"></div>
-              <div class="swiper-slide"><img src="https://i.pinimg.com/originals/27/7d/f7/277df72f8872119556174854781420ff.jpg" class="swiper-image"></div>
-              <div class="swiper-slide"><img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2022/01/Marvels-Spider-Man-Amazing-Spider-Man-4K.jpg" class="swiper-image"></div>
-              ...
-            </div>
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-    </section>
-    <canvas id="canvas" class="d-none" style="display:none;"></canvas>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script>
-        document.getElementById('google_translate_element').addEventListener('change',()=>{
-           setTimeout(()=>{
-            document.getElementById('model-name').innerText = "Something"
-           },2000)
-        })
-    </script>
-</body>
+        </div>  
+</body> 
 </html>
