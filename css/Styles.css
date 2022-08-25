@@ -58,7 +58,9 @@ h1{
     margin: 4%;
     border-radius: 15px;
 }
-
+.img-scroll {
+     border-radius: 15px;
+}
 .demoimginnerlist {
     display: inline-block;
     margin: 1%;
@@ -121,7 +123,7 @@ h1{
     height: 60vh;
     margin-top: 40%;
 }
-.btn {
+.btn{
     width: 90%;
     background-color: rgb(119, 235, 229);
     border-radius: 5px;
@@ -129,9 +131,12 @@ h1{
     font-weight: bold;
     height: 40px;
     border: none;
-    color: white;
     font-family: --font-family;
+}
+a{
+    background-color: rgb(119, 235, 229);
     text-decoration: none;
+    color: white;
 }
 .value {
     font-size: 10px;
