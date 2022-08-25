@@ -12,8 +12,8 @@ function createReadMore(){
 }
 function initDectectionModel(){
     //initialising the image classification classifier
-    classifier =  ml5.imageClassifier('../model/model.json',()=>{
-      console.log("model loaded")
+    classifier =  ml5.imageClassifier('./js/model.json',()=>{
+        console.log("model loaded")
     });
 }
 function requestModel(label){
