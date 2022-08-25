@@ -7,9 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <a  id="ar" href="intent://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Avocado/glTF/Avocado.gltf#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;">Avocado</a>
+    <a  id="ar" href="">Avocado</a>
     <script>
-        document.getElementById('ar').click()
+        const url = window.location.href;
+        const fileLink = url.split('?')[0]
+        const sceneViewer = document.getElementById('ar')
+        sceneViewer.src = `intent://arvr.google.com/scene-viewer/1.0?file=${fileLink}#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;`;
+        if(fileLink)
+            document.getElementById('ar').click()
     </script>
 </body>
 </html>
