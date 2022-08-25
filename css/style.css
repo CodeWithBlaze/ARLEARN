@@ -304,6 +304,7 @@ button{
         justify-content: center;
         align-items: center;
         width: 100%;
+        display: none;
         padding: 30px;
     }
     

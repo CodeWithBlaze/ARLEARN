@@ -25,44 +25,15 @@
 </head>
 <body>
     <header>
+        <div style="width: 100%;display:flex;justify-content:center;" id="google_translate_element"></div>
         <div class="header-container">
             <div class="search-bar-container">
                 <input id="search-bar" placeholder="Search">
                 <i class="fa-solid fa-magnifying-glass search-icon" onclick="getSearchResult()"></i>
             </div>
-            <div>
-                <select id="category">
-                    <option value="heritage">Heritage and Culture</option>
-                </select>
-            </div>
         </div>
     </header>
-        <section class="info-section">
-            <section class="text-info">
-                <h1 id="content-heading">ARLearn</h1>
-                <p id="introduction">is a technology that uses augmented reality to enchance the quality of education for everyone</p>
-                <label onclick="showHiddenText()" id="read-more-btn" style="display: none;">Read More ...</label>
-                <div id="model-images-container" style="display:none;">
-                    
-                </div>
-                <iframe 
-                    src="" 
-                    width="100%" 
-                    height="450" 
-                    style="border:0;display: none;" 
-                    allowfullscreen 
-                    loading="lazy" 
-                    id="street-view"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </section>
-            <section class="text-info-controller">
-                <button class="btn" id="street-view-button" onclick="showStreetView()">Show Street View</button>
-                <button class="btn">Show Images</button>
-                <button class="btn" onclick="showInformation()">Show Information</button>
-            </section>
-        </section>
-    </section>
+        
     <!-- the helper slider -->
     <section class="help" id="help">
         <i class="fa-solid fa-circle-xmark fa-2xl" id="carousel-close"></i>
@@ -80,6 +51,7 @@
             <div class="swiper-button-next"></div>
         </div>
     </section>
+    
     <section class="side-container">
         <section class="webcam-section">
             <div id="webcam-and-model-container">
@@ -128,10 +100,32 @@
                 <button class="webcam-control-btn webcam-controls-background" onclick="removeModel()"><i class="fa-solid fa-xmark fa-2xl"></i></button>
                 <button class="webcam-control-btn webcam-controls-background" onclick="showHelp()"><i class="fa-solid fa-question fa-xl"></i></button>
             </div>
-            <div id="google_translate_element"></div>
+            
             <input type="file"  id="imageUpload" style="display:none;" onchange="showPreview(event)">
             
         </section>
+        <section class="info-section">
+            <section class="text-info">
+                <label onclick="showHiddenText()" id="read-more-btn" style="display: none;">Read More ...</label>
+                <div id="model-images-container" style="display:none;"></div>
+                <iframe 
+                    src="" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;display: none;" 
+                    allowfullscreen 
+                    loading="lazy" 
+                    id="street-view"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </section>
+            <section class="text-info-controller">
+                <button class="btn" id="street-view-button" onclick="showStreetView()">Show Street View</button>
+                <button class="btn">Show Images</button>
+                <button class="btn" onclick="showInformation()">Show Information</button>
+            </section>
+        </section>
+    </section>
     <!-- <canvas id="canvas" class="d-none" style="display:none;"></canvas> -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
