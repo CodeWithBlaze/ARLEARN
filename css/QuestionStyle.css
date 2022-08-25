@@ -1,36 +1,43 @@
-header{
+header {
     /* background-color: red; */
     display: flex;
     flex-direction: column;
 }
+
 .main {
     border: 1px solid red;
     display: flex;
     justify-content: space-evenly;
     height: auto;
 }
-.head{
+
+.head {
     font-size: 20px;
     text-align: left;
     padding: 10px;
 }
+
 .innerMain {
     display: inline-block;
     height: auto;
 }
+
 .outerClass {
     margin-top: 2%;
 }
+
 .innerclass1 {
     display: inline-block;
     font-size: 20px;
     width: 200px;
     border-radius: 10px;
 }
+
 .innerclass {
     display: flex;
     justify-content: space-around;
 }
+
 .innerclass1 {
     width: 200px;
     height: 30px;
@@ -43,15 +50,82 @@ header{
     color: black;
     font-weight: bold;
 }
+
 h1 {
     text-align: center;
     font-size: 40px;
 }
+
 .img-div {
     text-align: center;
 }
+
 .main-img {
     width: 100%;
     height: auto;
-    border-radius: 15px ;
+    border-radius: 15px;
+}
+
+.radio {
+    margin: 10px 0px;
+    font-size: 40px;
+    margin-left: 10%;
+}
+
+.head {
+    font-size: 22px;
+}
+
+.mainHeading {
+    /* box-shadow: 10px 10px 10px 10px rgb(219, 213, 213); */
+    margin: 15px;
+    border-radius: 10px;
+}
+
+ul li {
+    margin: 5px 0px;
+    font-size: 20px;
+    padding: 3px;
+    list-style: none;
+    height: 39px;
+    margin: 10px 2px;
+
+    margin-left: -12%;
+    display: flex;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px 3px rgb(230, 218, 218);
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+
+}
+
+ul li:hover {
+    background-color: rgb(199, 252, 199);
+}
+
+.mainDIv {
+    margin: auto;
+    width: auto;
+    text-align: center;
+    margin-top: 1%;
+    width: 88%;
+
+
+}
+
+button {
+    margin: auto;
+    width: auto;
+    width: 100%;
+    height: 39px;
+    border-radius: 6px;
+    background-color: rgb(180, 255, 180);
+    font-weight: bolder;
+    border-color: rgb(63, 253, 120);
+
+}
+
+button:hover {
+    background-color: rgb(177, 255, 177);
 }

@@ -1,41 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ARLearn</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/SignUp.css">
-    <link rel="stylesheet" href="css/model.css">
-    <script defer type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/SignUp.css" />
+    <link rel="stylesheet" href="css/model.css" />
+    <script
+      defer
+      type="text/javascript"
+      src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"
+    ></script>
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
     <script defer src="js/database.js"></script>
-    <script  defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"
+    ></script>
     <script defer src="js/app.js"></script>
     <script defer src="js/model.js"></script>
-    <script defer src="https://kit.fontawesome.com/0d0a5eddb4.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-</head>
-<body>
-    <div class="outerMainDiv">
-        <div class="mainDiv"><h2>SignUp</h2></div>
-        <div class="inputDiv">
-          <input type="text" placeholder="email" id="email" /><br />
-          <input type="text" placeholder="password" id="password" />
-          <input type="number" placeholder="Age" id="age" /><br />
+    <script
+      defer
+      src="https://kit.fontawesome.com/0d0a5eddb4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <div class="mainDiv">
+      <!-- <h1>rthi</h1> -->
+      <div class="img-div">
+        <img
+          class="img"
+          src="./assets//logIIn33.jpg"
+          width="280px"
+          height="200px"
+        />
+      </div>
+      <div>
+        <h6 class="h5">Create your account</h6>
+        <div>
+          <input type="text" placeholder="Name" id="userName" />
+          <input type="text" placeholder="Email" id="userEmail" /><br />
+          <input type="text" placeholder="Password" id="userPass" />
+          <input type="text" placeholder="Age" id="userAge" />
         </div>
         <div class="login">
-          <div class="innerLogin" onclick="signIn()">Sign Up</div>
-          <a href="./index.html"><div class="innerLogin1">Log in</div></a>
+          <div class="innerLogin">Sign Up</div>
+          <!-- <a href="./SignUp.html"><div class="innerLogin1">Sign Up</div></a> -->
         </div>
       </div>
     </div>
-</body> 
+  </body>
 </html>
