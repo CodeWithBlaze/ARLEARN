@@ -48,7 +48,6 @@
                                 alt="a 3d model"
                                 src="" 
                                 class="model-container" 
-                                ar ar-modes="scene-viewer webxr quick-look" 
                                 seamless-poster 
                                 shadow-intensity="1" 
                                 camera-controls 
@@ -70,9 +69,7 @@
                                     <label id="cross" onclick="hideInfoBox()">X</label>
                                     <p id="info-para">Information</p>
                                 </div>
-                                <button slot="ar-button" id="ar-button">
-                                    View in your space
-                                </button>
+                               
                         </model-viewer>
                         
                     </div>
@@ -84,7 +81,7 @@
                 <button class="webcam-control-btn webcam-controls-background photo-btn" onclick="uploadImage()"><i class="fa-solid fa-upload fa-xl"></i></button>
                 <button class="webcam-control-btn webcam-controls-background" onclick="showFullScreen()"><i class="fa-solid fa-expand fa-xl"></i></button>
                 <button class="webcam-control-btn webcam-controls-background" onclick="removeModel()"><i class="fa-solid fa-xmark fa-2xl"></i></button>
-                <button class="webcam-control-btn webcam-controls-background" onclick="showHelp()"><i class="fa-solid fa-question fa-xl"></i></button>
+                <button class="webcam-control-btn webcam-controls-background" id="ar-button"><i class="fa-solid fa-cube fa-2xl"></i></button>
             </div>
             
             <input type="file"  id="imageUpload" style="display:none;" onchange="showPreview(event)">
@@ -132,6 +129,7 @@
         </div>
     </section>
     <canvas id="canvas" class="d-none" style="display:none;"></canvas>
+    
     <script type="text/javascript">
         function googleTranslateElementInit() {
           new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -145,5 +143,6 @@
            },2000)
         })
     </script>
+    
 </body>
 </html>

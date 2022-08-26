@@ -59,6 +59,8 @@ function maxResult(err,results){
     getInfo(max.label);
     
 }
+
+
 function detectAndShow(){
     const image = document.getElementById('prediction-image')
     classifier.classify(image,maxResult);
@@ -197,6 +199,7 @@ function showPreview(event){
       const img = document.getElementById('prediction-image')
       img.src = src;
       img.onload = detectAndShow()
+      
     }
 }
 function uploadImage(){
