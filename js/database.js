@@ -15,6 +15,12 @@ const auth=firebase.auth();
 async function fetchModelData(prediction){
     return await db.collection('Models').where('name','==',prediction).get()
 }
+async function fetchMonumentQuestions(monumentName,userAge){
+    const questions=await db.collection("questions").where("monument","==",monumentName).where("age", "==",userAge ).get();
+    questions.forEach(doc => {
+        console.log(doc.data())
+    });
+}
 const validateEmail = (email) => {
     return email.match(
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
