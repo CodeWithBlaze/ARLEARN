@@ -1,9 +1,9 @@
 :root{
     --button-color:#418EF2;
     --label-color:#418EF2;
-    --background-color:#242326;
-    --border-color:grey;
-    --search-bar-color-background:#2B2D31;
+    --background-color:rgb(251, 251, 251);
+    --border-color:black;
+    --search-bar-color-background:white;
     --font:Quicksand;
     --webcam-off-color:red;
 }
@@ -48,14 +48,14 @@ button{
     padding-left: 15px;
     border:1px solid var(--border-color);
     background-color:var(--search-bar-color-background);
-    color:white;
+    color:black;
     font-family: var(--font);
     font-weight: 600;
     border-radius:5px;
 }
 .search-icon{
     position: relative;
-    color:white;
+    color:rgb(14, 14, 14);
     right:40px;
 }
 /* -----------------------side container---------------------------------------- */
@@ -139,7 +139,7 @@ button{
     background-color:var(--search-bar-color-background);
     border-radius: 5px;
     padding-left: 30px;
-    color:white;
+    color:black;
     font-family: Quicksand;
     padding-right: 30px;
 
@@ -249,20 +249,7 @@ button{
     color:red;
     cursor: pointer;
 }
-#ar-button{
-    position:relative;
-    top:90%;
-    z-index: 9999;
-    left:50%;
-    transform: translate(-50%,-50%);
-    border-radius: 15px;
-    padding: 18px;
-    font-family: Quicksand;
-    border:none;
-    background-color: white;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    color:blue;
-}
+
 @media screen and (max-width: 400px) {
     body{
         padding: 0px;
@@ -318,6 +305,7 @@ button{
         justify-content: center;
         align-items: center;
         width: 100%;
+        display: none;
         padding: 30px;
     }
     

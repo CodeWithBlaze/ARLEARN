@@ -20,6 +20,10 @@ button.Hotspot{
     box-shadow: 0px 0px 5px grey;
     cursor: pointer;
   }
+  .ar-scene{
+    background-color: #7F00FF;
+    color:white;
+  }
   /* -----------------------updating progress bar ---------------------------------------- */
   model-viewer::part(default-progress-bar){
     background-color:#7F00FF;
