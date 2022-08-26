@@ -28,6 +28,10 @@ async function fetchModel(){
     ))  
 }
 function checkForNextQuestion(){
+    document.querySelectorAll('.innerclass1').forEach(ele=>{
+        ele.style.backgroundColor = "rgb(188, 243, 162)"
+        ele.style.color = "black";
+    })
     i++;
     if(i!=questionArray.length){
         const elementTag = document.querySelector(".head");
