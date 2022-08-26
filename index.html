@@ -25,17 +25,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 </head>
 <body>
-    <div class="outerMainDiv" >
-      <div class="mainDiv"><h2>SignIn</h2></div>
-      <div class="inputDiv">
+  <div>
+    <div class="img-div">
+      <img class="img" src="./assets/ss.png" width="100%" height="200px" />
+    </div>
+    <div>
+      <h3>Login</h3>
+      <div>
         <input type="text" placeholder="email" id="userEmail" /><br />
         <input type="text" placeholder="password" id="userPass" />
       </div>
       <a href="./ForgetPass.html"><div class="forget">Forget your password</div></a>
       <div class="login">
-        <div class="innerLogin" onclick="Login()">Log In</div>
-        <a href="./SignUp.html"><div class="innerLogin1">Sign Up</div></a>
+        <button class="innerLogin" onclick="Login()">Log In</button>
+        <a href="./SignUp.html"><button class="innerLogin1">Sign Up</button></a>
       </div>
     </div>
+  </div>
 </body> 
 </html>

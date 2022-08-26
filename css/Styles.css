@@ -163,3 +163,7 @@ h1{
     color: rgb(53, 53, 53);
     border-color: rgb(119, 255, 205);
 }
+.logout-icon{
+    width: 40px;
+    height: 40px;
+}
