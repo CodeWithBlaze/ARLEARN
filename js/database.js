@@ -49,8 +49,8 @@ async function signUp(){
                 userID:userCredential.user.uid,
                 age:age
             })
+            window.location = './index.html'
         })
-        window.location = './index.html'
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
