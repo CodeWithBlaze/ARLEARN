@@ -34,7 +34,12 @@ button{
     height:100%;
     z-index: 9999;
 }
-
+/* -----------------------back button---------------------------------------- */
+.back-div{
+    width: 10%;
+    padding:2px ;
+    margin-left: 2%;
+}
 /* -----------------------header section---------------------------------------- */
 .header-container{
     display: flex;
