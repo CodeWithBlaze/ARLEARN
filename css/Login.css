@@ -1,64 +1,87 @@
 body {
-    background-color: rgb(202, 255, 211);
+    /* background-color: rgb(202, 255, 211); */
+}
+
+h3 {
+    text-align: center;
+    font-size: 30px;
 }
 
 .mainDiv {
     text-align: left;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bolder;
-    margin-top: 30%;
-    margin-left: 10%;
+    margin-top: 50%;
+    margin-left: 6%;
+    font-family: Quicksand;
 }
 
 .inputDiv {
-    margin-top: 10%;
+    margin-top: 25%;
     text-align: left;
 }
 
 input {
-    border: 1px solid green;
+    border: 1px solid rgb(2, 233, 2);
     background-color: white;
     height: 20%;
     margin: 5%;
     height: 45px;
-    width: 90%;
-    border-radius: 7px;
+    width: 85%;
+    border-radius: 15px;
     color: black;
     font-family: Quicksand;
 }
 
-.forget  {
+.forget {
     text-align: center;
-    font-size: 25px;
-    margin-top: 5%;
-    margin-bottom: 20%;
+    font-size: 20px;
+    margin-bottom: 5%;
     font-weight: bold;
     font-family: Quicksand;
     color: black;
     text-decoration: none;
+    margin-top: 35%;
+}
+
+.img-div {
+    margin: auto;
+    width: auto;
+
+}
+
+.img {
+    /* margin-left: 10%; */
+
 }
 
 .login {
     display: flex;
     justify-content: space-between;
-    margin-top: 10%;
+    margin-top: 5%;
     font-family: Quicksand;
     font-weight: bold;
+    margin-right: 6%;
 }
 
 .innerLogin {
     border: 1px solid black;
+    width: auto;
+    margin: auto;
     width: 150px;
     font-size: 20px;
     height: 50px;
-    border-bottom-right-radius: 50px;
-    border-top-right-radius: 50px;
+    width: 90%;
+    border-radius: 15px;
+    /* border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px; */
     background-color: rgb(134, 236, 134);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -10px;
+    /* margin-left: -10px; */
     border-color: rgb(119, 255, 119);
+
 }
 
 .innerLogin1 {
@@ -66,9 +89,33 @@ input {
     width: 100px;
     font-weight: bold;
     font-size: 20px;
-    margin-right: 10%;
+    margin-right: 35%;
     font-size: 25px;
     color: black;
     text-decoration: none;
     font-family: Quicksand;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    list-style: none;
+    text-decoration: none;
+
+}
+
+a:active {
+    color: black;
+    list-style: none;
+    text-decoration: none;
+}
+
+.mainDiv1 {
+    box-shadow: 3px 10px 20px 10px rgb(84, 206, 68);
+    border: 1px solid rgb(255, 255, 255);
+    margin: 10px;
+    border-radius: 20px;
 }
