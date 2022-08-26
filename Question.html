@@ -26,27 +26,49 @@
 <body>
     <header>
         <div class="img-div">
-            <img
-                class="main-img"
-                src="https://cdn.britannica.com/86/170586-050-AB7FEFAE/Taj-Mahal-Agra-India.jpg"
-            />
+            <div class="correctAnswerContainer" id="correctAnswerContainer" onclick="removeBonusModal()">
+                <div class="correctAnswer">
+                    <img src="./assets/motivation.png">
+                    <h3>Congratulaions You earned 30 points 👏 </h3>
+                    <p>Try a Bonus question to unlock 50 coins </p>
+                    <button>Try Now</button>
+                </div>
+            </div>
+            <model-viewer 
+            alt="a 3d model"
+            src="https://firebasestorage.googleapis.com/v0/b/arlearn-3f847.appspot.com/o/taj_mahal.glb?alt=media&token=e5b0b102-9723-4aca-b6d6-81111474951c" 
+            class="model-container" 
+            seamless-poster 
+            shadow-intensity="1" 
+            camera-controls 
+            enable-pan 
+            id="hotspot-camera-view-demo" 
+            environment-image="neutral"
+            data-name="abc" 
+            camera-orbit="-4.829deg 15.78deg auto">
+            <div slot="progress-bar" class="progress-bar-container" id="progress-bar-container">
+                <div class="progress-bar-sub-container">
+                    <h3 class="status">Loading Model</h3>
+                    <div class="progress-bar-custom" id="progress"></div>
+                </div>
+            </div>
         </div>
         <div class="mainHeading">
             <h1 class="head">Who build Taj Mahal?</h1>
             <div class="outerClass">
             <div class="innerclass">
-                <ol class="innerclass1">
-                saha jahan
+                <ol class="innerclass1" id="option1" onclick="checkAnswer('Shah Jahan','Shah Jahan','option1')">
+                Shah Jahan
                 </ol>
-                <ol class="innerclass1">
-                mughal
+                <ol class="innerclass1" id="option2" onclick="checkAnswer('Mughal','Shah Jahan','option2')">
+                Mughal
                 </ol>
             </div>
             <div class="innerclass">
-                <ol class="innerclass1">
+                <ol class="innerclass1" id="option3" onclick="checkAnswer('Babur','Shah Jahan','option3')">
                 Babur
                 </ol>
-                <ol class="innerclass1">
+                <ol class="innerclass1" id="option4" onclick="checkAnswer('Akbar','Shah Jahan','option4')">
                 Akbar
                 </ol>
             </div>
