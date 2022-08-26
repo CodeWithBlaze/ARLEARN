@@ -6,20 +6,14 @@ const firebaseConfig = {
     messagingSenderId: "1090047578408",
     appId: "1:1090047578408:web:d6d0ba7649029912f8401d"
 };
-
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const storage = firebase.storage();
 const auth=firebase.auth();
-
+let questionArray=[];
+let userAge;
 async function fetchModelData(prediction){
     return await db.collection('Models').where('name','==',prediction).get()
-}
-async function fetchMonumentQuestions(monumentName,userAge){
-    const questions=await db.collection("questions").where("monument","==",monumentName).where("age", "==",userAge ).get();
-    questions.forEach(doc => {
-        console.log(doc.data())
-    });
 }
 const validateEmail = (email) => {
     return email.match(
@@ -50,12 +44,17 @@ async function signUp(){
     else{
         auth.createUserWithEmailAndPassword(email,password)
         .then((userCredential) => {
-            // console.log(userCredential.user.uid)
-            db.collection("users").add({
+            db.collection("users").doc(userCredential.user.uid).set({
                 userID:userCredential.user.uid,
                 age:age
             })
-            window.location = './index.html'
+            .then(() => {
+                console.log("Document successfully written!");
+                window.location = './index.html'
+            })
+            .catch((error) => {
+                console.error("Error writing document: ", error);
+            });
         })
         .catch((error) => {
             const errorCode = error.code;

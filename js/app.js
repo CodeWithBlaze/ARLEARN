@@ -252,24 +252,6 @@ function showHelp(){
 function removeBonusModal(){
     document.getElementById('correctAnswerContainer').style.display = "none";
 }
-function checkAnswer(value,actualAnswer,id){
-    document.querySelectorAll('.innerclass1').forEach(ele=>{
-        ele.style.backgroundColor = "rgb(188, 243, 162)"
-        ele.style.color = "black";
-    })
-    if(value === actualAnswer){
-        const answer = document.getElementById(id)
-        answer.style.backgroundColor = "green";
-        answer.style.color = "white";
-        document.getElementById('correctAnswerContainer').style.display = "flex";
-    }
-    else{
-        const wrongAnswer = document.getElementById(id)
-        wrongAnswer.style.backgroundColor = "red";
-        wrongAnswer.style.color = "white";
-    }
-} 
-
 function init(){
     initDectectionModel();
     document.getElementById('carousel-close').addEventListener('click',()=>{
